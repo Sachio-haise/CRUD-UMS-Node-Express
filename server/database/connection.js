@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
@@ -9,6 +10,7 @@ const connectDB = async () => {
             useFindAndModify: false,
             useCreateIndex: true
         })
+        console.log(process.env.MONGO_URI);
 
         console.log(`MongoDB connected : ${con.connection.host}`);
     }catch(err){
